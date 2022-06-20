@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import Resident from '../Resident';
 import { ResidentsService } from '../residents.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-residents-list',
@@ -12,7 +12,7 @@ export class ResidentsListComponent implements OnInit {
 
   residents: Resident[] = [];
 
-  constructor(private service: ResidentsService, private route:ActivatedRoute) { }
+  constructor(private service: ResidentsService, private router: Router, private route:ActivatedRoute) { }
   
   ngOnInit(): void {
     this.getResidents();
@@ -32,5 +32,9 @@ export class ResidentsListComponent implements OnInit {
     let currentYear: number = new Date().getFullYear();
     return currentYear - num;
   }
+
+  // goBack(){
+  //   this.router.navigate(['/residents']);
+  // }
 
 }

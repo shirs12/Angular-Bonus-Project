@@ -1,0 +1,28 @@
+<div class="container">
+    <h2>Events</h2>
+    <table class="table table-hover">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">Code</th>
+                <th scope="col">Name</th>
+                <th scope="col">Address</th>
+                <th scope="col">Participants</th>
+                <th scope="col">Manager</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let event of events" [ngStyle]="{'background-color': event.participantsAmount < 30 ? 'red' : event.participantsAmount < 100 ? 'yellow' : 'palegreen'}">
+                <td>{{ event.code }}</td>
+                <td>{{ event.eventName }}</td>
+                <td>{{ event.address }}</td>
+                <td>{{ event.participantsAmount }}</td>
+                <td>{{ event.manager.name }}</td>
+                <td>
+                    <a [routerLink]="['/event', event.code]" class="btn btn-primary">Edit</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <!-- <button class="btn btn-primary" (click)="goBack()">go back</button> -->
+</div>

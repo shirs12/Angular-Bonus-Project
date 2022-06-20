@@ -8,11 +8,15 @@ import { EventsModule } from './events/events.module';
 import { BusinessesModule } from './businesses/businesses.module';
 import { EmployeesModule } from './employees/employees.module';
 import { HomepageComponent } from './homepage/homepage.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomepageComponent
+    HomepageComponent,
+    NavbarComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

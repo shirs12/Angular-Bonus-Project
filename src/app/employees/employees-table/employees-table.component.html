@@ -1,0 +1,33 @@
+<div class="container">
+    <h2>Employees list</h2>
+    <table class="table table-hover">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Age</th>
+                <th scope="col">Genger</th>
+                <th scope="col">City</th>
+                <th scope="col">JobType</th>
+                <th scope="col">MonthlyHours</th>
+                <th scope="col">HourlyRate</th>
+                <th scope="col">MonthlyRate</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let employee of employees" [ngStyle]="{'background-color': employee.hourlyRate*employee.monthlyHours < 3000 ? 'red' : 'royalblue'}">
+                <td>{{ employee.id }}</td>
+                <td>{{ employee.name }}</td>
+                <td>{{ employee.age }}</td>
+                <td>{{ employee.gender }}</td>
+                <td>{{ employee.city }}</td>
+                <td>{{ employee.jobType }}</td>
+                <td>{{ employee.monthlyHours }}</td>
+                <td>{{ employee.hourlyRate }}</td>
+                <td>{{ employee.monthlyHours * employee.hourlyRate }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <!-- <button class="btn btn-primary" (click)="goBack()">go back</button> -->
+</div>

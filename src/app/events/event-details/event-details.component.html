@@ -1,0 +1,39 @@
+<div class="container">
+    <h2>Event details</h2>
+    <div *ngIf="event | async as event">
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h2 class="card-title">{{ event.eventName }}</h2>
+          <div class="form-group col-md-6">
+            <label>name:</label>
+            <input type="text" [(ngModel)]='event.eventName' class='form-control' />
+          </div>
+          <br>
+          <h4 class="card-text">Code: {{ event.code}}</h4>
+          <div class="form-group col-md-6">
+            <label>code:</label>
+            <input type="number" [(ngModel)]='event.code' class='form-control' />
+          </div>
+          <br>
+          <h4 class="card-text">Address: {{ event.address }}</h4>
+          <div class="form-group col-md-6">
+            <label>address:</label>
+            <input type="text" [(ngModel)]='event.address' class='form-control' />
+          </div>
+          <br>
+          <h4 class="card-text">Amount of participants: {{ event.participantsAmount }}</h4>
+          <div class="form-group col-md-6">
+            <label>amount of participants:</label>
+            <input type="number" [(ngModel)]='event.participantsAmount' class='form-control' />
+          </div>
+          <br>
+          <h4 class="card-text">Manager: {{ event.manager.name }}</h4>
+          <div class="form-group col-md-6">
+            <!-- <a class="btn btn-primary" [routerLink]="['/resident', event.manager.id]">Edit</a> -->
+          </div>
+          <br>
+        </div>
+        <br />
+        <button class="btn btn-primary" (click)="goBack()">submit</button>
+      </div>
+    </div>
