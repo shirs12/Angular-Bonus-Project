@@ -27,7 +27,7 @@ export class ResidentCardComponent implements OnInit {
   }
 
   goBack(){
-    this.router.navigate(['homepage']);
+    this.router.navigate(['residents']);
   }
 
 }

@@ -1,7 +1,8 @@
 <div class="container">
     <h2>Event details</h2>
+    <br>
     <div *ngIf="event | async as event">
-      <div class="card" style="width: 18rem;">
+      <div class="card" style="width: 60rem;">
         <div class="card-body">
           <h2 class="card-title">{{ event.eventName }}</h2>
           <div class="form-group col-md-6">
@@ -34,6 +35,6 @@
           <br>
         </div>
         <br />
-        <button class="btn btn-primary" (click)="goBack()">submit</button>
+        <button class="btn btn-primary" style="width: 25rem; align-self: center;"  (click)="goBack()">submit</button>
       </div>
     </div>

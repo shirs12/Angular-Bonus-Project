@@ -1,11 +1,12 @@
 <div class="container">
   <h2>Resident details</h2>
+  <br>
   <div *ngIf="resident | async as resident">
-    <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="{{ resident.img }}" alt="resident image">
+    <div class="card" style="width: 60rem;">
+      <img class="card-img-top" style="width: 18rem; align-self: center;" src="{{ resident.img }}" alt="resident image">
       <div class="card-body">
         <h2 class="card-title">{{ resident.name }}, ID {{ resident.id }}</h2>
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-10">
           <label>name:</label>
           <input type="text" [(ngModel)]='resident.name' class='form-control' />
           <label>id:</label>
@@ -13,38 +14,38 @@
         </div>
         <br>
         <h4 class="card-text">Age: {{ resident.age}}</h4>
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-10">
           <label>age:</label>
           <input type="number" [(ngModel)]='resident.age' class='form-control' />
         </div>
         <br>
         <h4 class="card-text">Gender: {{ resident.gender ? "Male" : "Female" }}</h4>
         <h4 class="card-text">City: {{ resident.city }}</h4>
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-10">
           <label>city:</label>
           <input type="text" [(ngModel)]='resident.city' class='form-control' />
         </div>
         <br>
         <h4 class="card-text">Address: {{ resident.address }}</h4>
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-10">
           <label>address:</label>
           <input type="text" [(ngModel)]='resident.address' class='form-control' />
         </div>
         <br>
         <h4 class="card-text">First Year: {{ resident.year }}</h4>
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-10">
           <label>first year:</label>
           <input type="number" [(ngModel)]='resident.year' class='form-control' />
         </div>
         <br>
         <h4 class="card-text">Status: {{ resident.status }}</h4>
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-10">
           <label>status:</label>
           <input type="text" [(ngModel)]='resident.status' class='form-control' />
         </div>
         <br>
       </div>
       <br/>
-      <button class="btn btn-primary" (click)="goBack()">submit</button>
+      <button class="btn btn-primary" style="width: 25rem; align-self: center;" (click)="goBack()">submit</button>
     </div>
   </div>

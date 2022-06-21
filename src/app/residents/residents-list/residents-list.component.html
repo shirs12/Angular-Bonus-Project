@@ -1,22 +1,24 @@
 <div class="container">
   <h2>Residents list</h2>
-  <div *ngFor="let resident of residents">
-    <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="{{ resident.img }}" alt="resident image">
-      <div class="card-body">
-        <h5 class="card-title">{{ resident.name }}, ID {{ resident.id }}</h5>
-        <p class="card-text">Age: {{ resident.age}}</p>
-        <p class="card-text">Gender: {{ resident.gender ? "Male" : "Female" }}</p>
-        <p class="card-text">City: {{ resident.city }}</p>
-        <p class="card-text">Address: {{ resident.address }}</p>
-        <p class="card-text">First Year: {{ resident.year }}</p>
-        <p class="card-text">Status: {{ resident.status }}</p>
-        <p class="card-text">Years of seniority in the city : {{ getSeniorityYear(resident.year) }}</p>
-        <a class="btn btn-primary" [routerLink]="['/resident', resident.id]">Edit</a>
-      </div>
+  <div class="row">
+    <div *ngFor="let resident of residents" class="col-sm">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="{{ resident.img }}" alt="resident image">
+        <div class="card-body">
+          <h5 class="card-title">{{ resident.name }}, ID {{ resident.id }}</h5>
+          <p class="card-text">Age: {{ resident.age}}</p>
+          <p class="card-text">Gender: {{ resident.gender ? "Male" : "Female" }}</p>
+          <p class="card-text">City: {{ resident.city }}</p>
+          <p class="card-text">Address: {{ resident.address }}</p>
+          <p class="card-text">First Year: {{ resident.year }}</p>
+          <p class="card-text">Status: {{ resident.status }}</p>
+          <p class="card-text">Years of seniority in the city : {{ getSeniorityYear(resident.year) }}</p>
+          <a class="btn btn-primary" [routerLink]="['/resident', resident.id]">Edit</a>
+        </div>
+      </div><br>
     </div>
     <br>
   </div>
-  <br/>
+  <br />
   <!-- <button class="btn btn-primary" (click)="goBack()">go back</button> -->
 </div>
